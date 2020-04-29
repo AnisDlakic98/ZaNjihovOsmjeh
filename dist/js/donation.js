@@ -10,6 +10,7 @@ $(function() {
         e.preventDefault();
 
         var donationForm = $("#donation_form");
+        var popup = $(".popup");
 
         openElement(".popup", "slideInUp", "bounceOutDown");
 
@@ -26,6 +27,7 @@ $(function() {
 
         for (let i = 0; i < selectedItems.length; i++) {
             const itemObject = getItemByName(selectedItems[i]);
+            const shortName = itemObject[0].shortName;
             const category = getCategoryByID(itemObject[0].categoryId);
             const categoryOptions = category.options;
             const ages = categoryOptions[0].age;
@@ -50,25 +52,26 @@ $(function() {
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4 m-auto text-center">
+                        <div class="col-md-4 m-auto text-center" id="${shortName}_select_area">
                             <p>Odaberi pol:</p>
                             <div class="gender_area">
-                                <div class="gender_single" id="female">
+                            
+                                <label for="${shortName}-female" id="${shortName}-label-female">
                                     <img src="img/multistep/group-217.svg" alt="">
                                     <p>Žensko</p>
-                                </div>
-                                <div class="gender_single" id="male">
+                                </label>
+                                <input type="radio" name="${shortName}-gender" class="${shortName}-gender" id="${shortName}-female" value="female">
+                                <label for="${shortName}-male" id="${shortName}-label-male">
                                     <img src="img/multistep/group-216.svg" alt="">
                                     <p>Muško</p>
-                                </div>
-                                <input type="radio" name="${selectedItems[i]}-gender" class="${selectedItems[i]}-gender ${selectedItems[i]}-female" value="female">
-                                <input type="radio" name="${selectedItems[i]}-gender" class="${selectedItems[i]}-gender ${selectedItems[i]}-male" value="male"> 
+                                </label>
+                                <input type="radio" name="${shortName}-gender" class="${shortName}-gender" id="${shortName}-male" value="male"> 
                             </div>
-                            <div class="select_area">`;
+                            <div class="select_area" >`;
 
             if (category.id == 1) {
                 html += `           
-                                <select class="wide" id="age">
+                                <select class="wide" id="age" name="age">
                                     <option data-display="Uzrast">Odaberi</option>
                                      `;
                 for (let i = 0; i < ages.length; i++) {
@@ -77,7 +80,7 @@ $(function() {
 
                 html += `
                                     </select>
-                                    <select class="wide" id="size">
+                                    <select class="wide" id="size" name="size">
                                         <option data-display="Broj">Odaberi</option>
                                         `;
                 for (let i = 0; i < sizes.length; i++) {
@@ -89,7 +92,7 @@ $(function() {
 
             html += `
 
-            <select class="wide" id="price">
+            <select class="wide" id="price" name="price">
                                         <option data-display="Cijenovni raspon">Odaberi</option>
                                         <option value="${priceRanges}">${priceRanges}</option>
                                     </select>
@@ -97,110 +100,16 @@ $(function() {
                                     <input type="number" class="mb-4" id="quantity" name="quantity" min="1" max="${quantity}" placeholder="Količina">
                                     
                                 </div>
-                                <button type="button" class="btn btn_primary" id="nextBtn" onclick="nextPrev(1)">Sledeći korak</button>
+                                <button type="button" class="btn btn_primary" id="nextBtn" onclick="nextPrev(1), ${storeItem(
+                                  shortName
+                                )}">Sledeći korak</button>
                             </div>
                         </div>
                     </div>
                 </div>`;
         }
 
-        html += `
-        <div class="popup_tab">
-            <div class="container pt-4">
-                <div class="poput_tab_title text-center">
-                    <h1>Lične informacije</h1>
-                    <p>Informacije su nam potrebne kako bi uspješno rezervisali rezervaciju.</p>
-                    <hr/>
-                </div>
-                <div class="popup_header">
-                    <button type="button" class="btn btn_transparent" id="prevBtn" onclick="nextPrev(-1)">
-                        <img src="img/multistep/arrow-pointing-to-right.svg" alt=""> Prethodni korak
-                    </button>
-                    <div class="close">
-                        <img src="img/multistep/cancel.svg" alt="">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4 m-auto text-center">
-                        <p>Odaberi:</p>
-                        
-                        <div class="subject_person_area">
-                            <div class="subject_person_single" id="legalEntity">
-                                <p>Pravno<br>Lice</p>
-                            </div>
-                            <div class="subject_person_single" id="physicalPerson">
-                                <p>Fizičko<br>Lice</p>
-                            </div>
-                            <input type="radio" name="subject_person" class="subject_person legalEntity" value="legalEntity">
-                            <input type="radio" name="subject_person" class="subject_person physicalPerson" value="physicalPerson"> 
-                        </div>
-                        <div class="personal_info">
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="name" placeholder="Ime i Prezime" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="email" placeholder="E-mail" />
-                            </div>
-                            <div class="form-group">
-                                <input type="text" class="form-control" id="phone" placeholder="Broj telefona" />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="text-center">   
-                    <button type="button" class="btn btn_primary" id="nextBtn" onclick="nextPrev(1)">Sledeći korak</button>                        
-                </div>
-            </div>
-        </div>`;
-
-        html += `
-        <div class="popup_tab overview">
-            <div class="container pt-4">
-                <div class="poput_tab_title text-center">
-                    <h1>Pregled rezervacije</h1>
-                </div>
-                <div class="popup_header">
-                    <div class="close" id="closePopup">
-                        <img src="img/multistep/cancel.svg" alt="">
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-5 m-auto text-left">
-                        <div class="donator_info">
-                            <p>Informacije o donatoru:</p>
-                            <ul>
-                                <li>
-                                    <span>Ime i prezime Donatora</span>
-                                    <span><b>Anis Dlakic</b></span>
-                                </li>
-                                <li>
-                                    <span>Email</span>
-                                    <span><b>anis.dlakic.fit@gmail.com</b></span>
-                                </li>
-                                <li>
-                                    <span>Broj telefona</span>
-                                    <span><b>068848285</b></span>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="articles_info">
-                            <p>Informacije o artiklima:</p>
-                        </div>
-                        <div class="text-center">
-                            <button type="button" class="btn btn_primary" id="nextBtn" onclick="nextPrev(1)">Rezerviši donaciju</button>
-                        </div>
-                        <div class="tab_note text-center">
-                            <p>* Donacija može biti rezervisana 5 dana od datuma rezervisanja, nakon čega prelazi u kategoriju slobodnih proizvoda.</p>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-            </div>
-        </div>`;
-
-        html += `
+        var html1 = `
         <div class="container">
             <div class="row">
                 <div class="popup_indicators m-auto">
@@ -210,7 +119,9 @@ $(function() {
             </div>
         </div>`;
 
-        donationForm.html(html);
+        donationForm.append(html1);
+
+        donationForm.prepend(html);
 
         showTab(currentTab); // Display the current tab
         $("select").niceSelect();
@@ -223,6 +134,129 @@ $(function() {
 
 var currentTab = 0;
 const animations = ["animated", "bounceInLeft"];
+var articlesNames = [];
+
+function storeItem(shortName) {
+    articlesNames.push(shortName);
+}
+
+function confirmDonation() {
+    var formValues = serializeDiv($(`#donation_form`), "serializeArray");
+    console.log(formValues);
+    openElement("#prompt_success", "heartBeat", "bounceOutDown");
+}
+
+function addDonation() {
+    var formValues = [];
+    var html = "";
+
+    for (let i = 0; i < articlesNames.length; i++) {
+        formValues.push(
+            serializeDiv($(`#${articlesNames[i]}_select_area`), "serializeArray")
+        );
+    }
+
+    console.log(formValues);
+
+    for (let i = 0; i < formValues.length; i++) {
+        const itemObject = getItemByShortName(articlesNames[i]);
+        html += `
+        <div class="card">
+            <div class="card-header" role="tab" id="${articlesNames[i]}">
+                <a data-toggle="collapse" data-parent="#accordionEx" href="#${
+                  articlesNames[i]
+                }-collapse" aria-expanded="true" aria-controls="${
+      articlesNames[i]
+    }-collapse">
+                    <h5 class="mb-0">
+                        ${itemObject[0].name}
+                        <i class="fas fa-angle-up rotate-icon"></i>
+                    </h5>
+                </a>
+            </div>
+            <div id="${articlesNames[i]}-collapse" class="collapse ${
+      i === 0 ? "show" : ""
+    }" role="tabpanel" aria-labelledby="${
+      articlesNames[i]
+    }" data-parent="#accordionEx">
+                <div class="card-body">`;
+
+        for (let j = 0; j < formValues[i].length; j++) {
+            var option = "";
+            switch (formValues[i][j].name) {
+                case "age":
+                    option = "Godine:";
+                    break;
+                case "size":
+                    option = "Veličina:";
+                    break;
+                case "price":
+                    option = "Godine:";
+                    break;
+                case "quantity":
+                    option = "Količina:";
+                    break;
+                case "male":
+                    option = "Muško::";
+                    break;
+                case "female":
+                    option = "Žensko:";
+                    break;
+                default:
+                    option = "Pol:";
+                    break;
+            }
+            var value = "";
+            switch (formValues[i][j].value) {
+                case "male":
+                    value = "Muško";
+                    break;
+                case "female":
+                    value = "Žensko";
+                    break;
+                default:
+                    value = formValues[i][j].value;
+                    break;
+            }
+
+            html += `
+                <li>
+                    <span>${option}</span>
+                    <span><b>${value}</b></span>
+                </li>
+
+            `;
+        }
+
+        html += `</div>
+            </div>
+        </div>
+        `;
+    }
+
+    $("#accordionEx").append(html);
+    formValues.push(serializeDiv($("#personal_info_area"), "serializeArray"));
+}
+
+function serializeDiv($div, serialize_method) {
+    // Accepts 'serialize', 'serializeArray'; Implicit 'serialize'
+    serialize_method = serialize_method || "serialize";
+
+    // Unique selector for wrapper forms
+    var inner_wrapper_class = "any_unique_class_for_wrapped_content";
+
+    // Wrap content with a form
+    $div.wrapInner("<form class='" + inner_wrapper_class + "'></form>");
+
+    // Serialize inputs
+    var result = $("." + inner_wrapper_class, $div)[serialize_method]();
+
+    // Eliminate newly created form
+    $(".script_wrap_inner_div_form", $div).contents().unwrap();
+
+    // Return result
+    return result;
+}
 
 function openElement(element, openAnimation, closeAnimation) {
     var element = $(element);
@@ -234,22 +268,56 @@ function openElement(element, openAnimation, closeAnimation) {
 
 function closeElement(element, openAnimation, closeAnimation) {
     var element = $(element);
-    element.removeClass(openAnimation).addClass(closeAnimation + " active");
+    element.removeClass(openAnimation + " active").addClass(closeAnimation);
     $("body").css("overflow", "visible");
 }
 
 addEventListeners = () => {
+    $(document).on("keyup", "#donation_form #name", function() {
+        $(".donator_info ul li:nth-child(1) span:nth-child(2) b").html(
+            $(this).val()
+        );
+    });
+
+    $(document).on("keyup", "#donation_form #email", function() {
+        $(".donator_info ul li:nth-child(2) span:nth-child(2) b").html(
+            $(this).val()
+        );
+    });
+
+    $(document).on("keyup", "#donation_form #phone", function() {
+        $(".donator_info ul li:nth-child(3) span:nth-child(2) b").html(
+            $(this).val()
+        );
+    });
+
+    $("#accordionEx").on("hide.bs.collapse show.bs.collapse", (e) => {
+        $(e.target)
+            .prev()
+            .find("i:last-child")
+            .toggleClass("fa-angle-up fa-angle-down");
+    });
+
+    $(".collapse.show");
+
     $(document).on("click", ".close", function() {
-        openElement(".prompt", "heartBeat", "bounceOutDown");
+        openElement("#prompt_cancel", "heartBeat", "bounceOutDown");
+    });
+
+    $(document).on("click", "#prompt_success_cancel", function() {
+        closeElement("#prompt_success", "heartBeat", "bounceOutDown");
+        closeElement(".popup", "heartBeat", "bounceOutDown");
+        location.reload();
     });
 
     $(document).on("click", ".positive", function() {
-        closeElement(".prompt", "heartBeat", "bounceOutDown");
+        closeElement("#prompt_cancel", "heartBeat", "bounceOutDown");
         closeElement(".popup", "slideInUp", "bounceOutDown");
+        location.reload();
     });
 
     $(document).on("click", ".negative", function() {
-        closeElement(".prompt", "heartBeat", "bounceOutDown");
+        closeElement("#prompt_cancel", "heartBeat", "bounceOutDown");
     });
 
     $(document).on("click", ".subject_person_single", function() {
@@ -267,16 +335,20 @@ addEventListeners = () => {
         }
     });
 
-    $(document).on("click", ".gender_single", function() {
-        let id = $(this).prop("id");
-        if (id === "female") {
-            $(".female").prop("checked", true);
-            $("#male").removeClass("selected");
-            $("#female").addClass("selected");
+    $(document).on("click", ".gender_area label", function() {
+        let id = $(this).next().attr("id");
+        let idArray = id.split("-");
+        let gender = idArray[idArray.length - 1];
+
+        let label = `${id}-label`.split("-");
+        label = label[0];
+
+        if (gender == "female") {
+            $(`#${label}-label-male`).removeClass("selected");
+            $(`#${label}-label-female`).addClass("selected");
         } else {
-            $(".male").prop("checked", true);
-            $("#female").removeClass("selected");
-            $("#male").addClass("selected");
+            $(`#${label}-label-female`).removeClass("selected");
+            $(`#${label}-label-male`).addClass("selected");
         }
     });
 
@@ -325,9 +397,43 @@ function showTab(n) {
 
 function nextPrev(n) {
     var x = $(".popup_tab");
+    if (n >= 1 && !validateForm()) return false;
     x[currentTab].style.display = "none";
     currentTab = currentTab + n;
     showTab(currentTab);
+}
+
+function validateForm() {
+    var x,
+        y,
+        i,
+        valid = true;
+    x = document.getElementsByClassName("popup_tab");
+
+    var selectMenus = x[currentTab].querySelectorAll("select, input");
+
+    console.log(selectMenus);
+
+    for (i = 0; i < selectMenus.length; i++) {
+        console.log(selectMenus[i]);
+
+        console.log(selectMenus[i]);
+        if (
+            selectMenus[i].value == "Odaberi" ||
+            selectMenus[i].value == "" ||
+            selectMenus[i].value < 1 ||
+            (!selectMenus[0].checked && !selectMenus[1].checked)
+        ) {
+            selectMenus[i].classList.remove("valid");
+            selectMenus[i].classList.add("invalid");
+            valid = false;
+        } else {
+            selectMenus[i].classList.remove("invalid");
+            selectMenus[i].classList.add("valid");
+            valid = true;
+        }
+    }
+    return valid;
 }
 
 //________Get Categories Function________//
@@ -364,6 +470,18 @@ beforecreate: function getItemById(id) {
             item = data;
         },
         async: false,
+    });
+    return item;
+}
+
+beforecreate: function getItemByShortName(shortName) {
+    var item = null;
+    $.ajax({
+        url: `http://localhost:3000/items/?shortName=${shortName}`,
+        async: false,
+        dataType: "json",
+    }).done(function(data) {
+        item = data;
     });
     return item;
 }

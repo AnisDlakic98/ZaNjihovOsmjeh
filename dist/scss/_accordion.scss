@@ -1,0 +1,50 @@
+#accordionEx {
+    margin-bottom: 30px;
+    .card {
+        border-radius: 5px;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16);
+        margin-bottom: 10px;
+    }
+    .card-header {
+        background-color: $white;
+        border-bottom: 3px solid #dedede;
+        a {
+            font-family: $font_stack_1;
+            color: $light;
+            font-size: 18px;
+        }
+        .rotate-icon {
+            float: right;
+            position: relative;
+            top: 4px;
+        }
+    }
+    .card-body {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: #f0f3ff;
+        li {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid lighten($extra-light, 30%);
+            &:first-child {
+                padding-top: 0;
+            }
+            &:last-child {
+                padding-bottom: 0;
+                border-bottom: none;
+            }
+            span {
+                opacity: 0.5;
+                font-family: $font_stack_1;
+                font-size: 18px;
+                color: #080808;
+                b {
+                    color: #000;
+                }
+            }
+        }
+    }
+}

@@ -1266,24 +1266,25 @@ FOOTER
   justify-content: center;
 }
 
-.popup_tab .gender_area .gender_single {
+.popup_tab .gender_area input {
+  display: none;
+  pointer-events: none;
+}
+
+.popup_tab .gender_area label {
   margin: 20px 0;
   cursor: pointer;
 }
 
-.popup_tab .gender_area .gender_single img {
+.popup_tab .gender_area label img {
   transform: scale(0.7);
 }
 
-.popup_tab .gender_area .gender_single p {
+.popup_tab .gender_area label p {
   margin-top: -10px;
 }
 
-.popup_tab .gender_area .gender_single:hover .gender_single p {
-  display: none;
-}
-
-.popup_tab .gender_area .gender_single.selected p {
+.popup_tab .gender_area label.selected p {
   color: #06aaca;
   font-weight: 700;
 }
@@ -1374,6 +1375,32 @@ FOOTER
   font-family: "Playfair Display", serif;
   font-size: 72px;
   font-weight: 700;
+}
+
+#prompt_success img {
+  width: 100%;
+}
+
+#prompt_success #prompt_success_cancel {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  cursor: pointer;
+}
+
+.invalid ~ .nice-select {
+  background-color: #ffecec !important;
+  border: solid 2px #f38484;
+}
+
+input.invalid {
+  background-color: #ffecec !important;
+  border: solid 2px #f38484;
+}
+
+.form-control.invalid {
+  border: none;
+  border-bottom: solid 2px #f38484;
 }
 
 @media (max-width: 1850px) {
@@ -1694,5 +1721,66 @@ FOOTER
   #gallery h1 {
     font-size: 25px;
   }
+}
+
+#accordionEx {
+  margin-bottom: 30px;
+}
+
+#accordionEx .card {
+  border-radius: 5px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.16);
+  margin-bottom: 10px;
+}
+
+#accordionEx .card-header {
+  background-color: #fff;
+  border-bottom: 3px solid #dedede;
+}
+
+#accordionEx .card-header a {
+  font-family: "Muli", sans-serif;
+  color: #2e3038;
+  font-size: 18px;
+}
+
+#accordionEx .card-header .rotate-icon {
+  float: right;
+  position: relative;
+  top: 4px;
+}
+
+#accordionEx .card-body {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  background-color: #f0f3ff;
+}
+
+#accordionEx .card-body li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #e4e5eb;
+}
+
+#accordionEx .card-body li:first-child {
+  padding-top: 0;
+}
+
+#accordionEx .card-body li:last-child {
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+#accordionEx .card-body li span {
+  opacity: 0.5;
+  font-family: "Muli", sans-serif;
+  font-size: 18px;
+  color: #080808;
+}
+
+#accordionEx .card-body li span b {
+  color: #000;
 }
 /*# sourceMappingURL=main.css.map */

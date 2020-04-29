@@ -25,7 +25,8 @@
     <link rel="stylesheet" href="css/animate.css" />
     <!-- Nice Select CSS -->
     <link rel="stylesheet" href="vendor/nice-select/css/nice-select.css">
-
+    <!-- Site Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/main.css" />
 </head>
@@ -74,6 +75,7 @@
     </header>
 
 
+    
     
 
 
@@ -132,18 +134,119 @@
         </div>
     </section>
 
+    <!-- =============================== WIZARD START ===============================-->
+    <div id="wizard" class="popup">
+        <form id="donation_form">
+            <div class="popup_tab">
+                <div class="container pt-4">
+                    <div class="poput_tab_title text-center">
+                        <h1>Lične informacije</h1>
+                        <p>
+                            Informacije su nam potrebne kako bi uspješno rezervisali rezervaciju.
+                        </p>
+                        <hr />
+                    </div>
+                    <div class="popup_header">
+                        <button type="button" class="btn btn_transparent" id="prevBtn" onclick="nextPrev(-1)">
+                <img src="img/multistep/arrow-pointing-to-right.svg" alt="" />
+                Prethodni korak
+            </button>
+                        <div class="close">
+                            <img src="img/multistep/cancel.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 m-auto text-center">
+                            <p>Odaberi:</p>
 
-    
+                            <div class="subject_person_area">
+                                <div class="subject_person_single" id="legalEntity">
+                                    <p>Pravno<br />Lice</p>
+                                </div>
+                                <div class="subject_person_single" id="physicalPerson">
+                                    <p>Fizičko<br />Lice</p>
+                                </div>
+                                <input type="radio" name="subject_person" class="subject_person legalEntity" value="legalEntity" />
+                                <input type="radio" name="subject_person" class="subject_person physicalPerson" value="physicalPerson" />
+                            </div>
+                            <div class="personal_info" id="personal_info_area">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="name" id="name" placeholder="Ime i Prezime" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="email" id="email" placeholder="E-mail" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" name="phone" id="phone" placeholder="Broj telefona" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <button type="button" class="btn btn_primary" id="nextBtn" onclick="nextPrev(1), addDonation()">
+                Sledeći korak
+            </button>
+                    </div>
+                </div>
+            </div>
+            <div class="popup_tab overview">
+                <div class="container pt-4">
+                    <div class="poput_tab_title text-center">
+                        <h1>Pregled rezervacije</h1>
+                    </div>
+                    <div class="popup_header">
+                        <div class="close">
+                            <img src="img/multistep/cancel.svg" alt="" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-5 m-auto text-left">
+                            <div class="donator_info">
+                                <p>Informacije o donatoru:</p>
+                                <ul>
+                                    <li>
+                                        <span>Ime i prezime Donatora</span>
+                                        <span><b>Anis Dlakic</b></span>
+                                    </li>
+                                    <li>
+                                        <span>Email</span>
+                                        <span><b>anis.dlakic.fit@gmail.com</b></span>
+                                    </li>
+                                    <li>
+                                        <span>Broj telefona</span>
+                                        <span><b>068848285</b></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="articles_info">
+                                <p>Informacije o artiklima:</p>
+                                <!--Accordion wrapper-->
+                                <div class="accordion md-accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+                                 
 
 
-            <!-- =============================== WIZARD START ===============================-->
-            <div id="wizard" class="popup">
-                <form id="donation_form">
-                    
-                </form>
+                                </div>
+                                <!-- Accordion wrapper -->
+                            </div>
+                            <div class="text-center">
+                                <button type="button" class="btn btn_primary" id="nextBtn" onclick="confirmDonation()">
+                                    Rezerviši donaciju
+                                </button>
+            </div>
+            <div class="tab_note text-center">
+                <p>
+                    * Donacija može biti rezervisana 5 dana od datuma rezervisanja, nakon čega prelazi u kategoriju slobodnih proizvoda.
+                </p>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </form>
             </div>
 
-            <div class="prompt">
+            <div class="prompt" id="prompt_cancel">
                 <div class="container">
                     <div class="row text-center">
                         <div class="col-lg-7">
@@ -158,7 +261,24 @@
                     </div>
                 </div>
             </div>
-            
+
+            <div class="prompt" id="prompt_success">
+                <div class="container">
+                    <div class="row text-center">
+                        <div class="col-lg-7">
+                            <div class="m-auto">
+                                <h1>Uspješna rezervacija!</h1>
+                                <img src="img/multistep/zahvalnica.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="prompt_success_cancel">
+                    <img src="img/multistep/cancel.svg" alt="" />
+                </div>
+            </div>
+
+
 
             <!-- ========================= FOOTER ========================= -->
             <footer class="footer">

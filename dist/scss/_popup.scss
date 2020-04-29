@@ -91,10 +91,10 @@
             display: flex;
             justify-content: center;
             input {
-                // display: none;
-                // pointer-events: none;
+                display: none;
+                pointer-events: none;
             }
-            .gender_single {
+            label {
                 margin: 20px 0;
                 cursor: pointer;
                 img {
@@ -102,9 +102,6 @@
                 }
                 p {
                     margin-top: -10px;
-                }
-                &:hover .gender_single p {
-                    display: none;
                 }
                 &.selected {
                     p {
@@ -189,4 +186,31 @@
         font-size: 72px;
         font-weight: map-get($font-weights, bold);
     }
+}
+
+#prompt_success {
+    img {
+        width: 100%;
+    }
+    #prompt_success_cancel {
+        position: absolute;
+        top: 60px;
+        right: 60px;
+        cursor: pointer;
+    }
+}
+
+.invalid~.nice-select {
+    background-color: #ffecec !important;
+    border: solid 2px #f38484;
+}
+
+input.invalid {
+    background-color: #ffecec !important;
+    border: solid 2px #f38484;
+}
+
+.form-control.invalid {
+    border: none;
+    border-bottom: solid 2px #f38484;
 }
