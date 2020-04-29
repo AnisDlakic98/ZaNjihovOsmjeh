@@ -1,0 +1,51 @@
+/*
+-------------------------------------------
+FOOTER
+-------------------------------------------
+*/
+
+.footer {
+    @include background("../img/pozadina.svg", left, cover, no-repeat);
+    height: auto;
+    padding: 32.4px 0;
+    position: relative;
+    .footer_logo {
+        width: 169px !important;
+    }
+    .useful-info {
+        font-family: $font_stack_1;
+        font-size: 18px;
+        line-height: 1.5;
+        color: $white;
+        margin-top: 20px;
+        hr {
+            border: solid 1px #ffffff1a;
+            width: 230px;
+            margin: 10px auto;
+        }
+    }
+    .social-icons {
+        li {
+            display: inline;
+            margin: 0 5px;
+        }
+    }
+}
+
+.djecak,
+.djevojcica {
+    position: absolute;
+    z-index: 100 !important;
+    overflow: hidden !important;
+    top: -30px;
+    height: 351px;
+}
+
+.djevojcica {
+    left: -30px;
+}
+
+.djecak {
+    right: 0;
+    width: 350px;
+}

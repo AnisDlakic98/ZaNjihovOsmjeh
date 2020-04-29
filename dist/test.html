@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test 1</title>
+    <style>
+        .wrapper {
+            display: grid;
+            grid-template-columns: 70% 30%;
+            /* grid-column-gap: 1em;
+            grid-row-gap: 1em;  isti efekat kao i grid-gap */
+            grid-gap: 1em;
+        }
+        
+        .wrapper>div {
+            background: #eee;
+            padding: 1em;
+        }
+        
+        .wrapper>div:nth-child(odd) {
+            background: #ddd;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <div>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, sapiente libero earum reprehenderit dignissimos delectus voluptate! Quisquam commodi modi dolores accusantium voluptate animi ipsam, voluptas debitis, sit quibusdam sint hic incidunt reiciendis
+            asperiores at dolorem ipsa neque facilis? Modi eaque ex necessitatibus voluptatibus quo aliquam ut qui aperiam natus soluta perferendis quia quisquam et aliquid aut odio saepe, magnam facere?
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis odit ipsam voluptas provident architecto suscipit veniam earum, at numquam ut modi, hic animi obcaecati aliquam rem doloremque, reiciendis unde a?
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis odit ipsam voluptas provident architecto suscipit veniam earum, at numquam ut modi, hic animi obcaecati aliquam rem doloremque, reiciendis unde a?
+        </div>
+        <div>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Officiis odit ipsam voluptas provident architecto suscipit veniam earum, at numquam ut modi, hic animi obcaecati aliquam rem doloremque, reiciendis unde a?
+        </div>
+    </div>
+</body>
+
+</html>

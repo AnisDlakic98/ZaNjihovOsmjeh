@@ -1,0 +1,99 @@
+/*
+-------------------------------------------
+DEFAULT
+-------------------------------------------
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap");
+body {
+    font-family: $font_stack_1;
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    // overflow-x: hidden;
+}
+
+p,
+ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.mt-40 {
+    margin-top: 40px !important;
+}
+
+.section_area {
+    padding: 120px 0;
+    &.dark {
+        background: rgba(0, 0, 0, 0.04);
+        padding-top: 0;
+    }
+    .section_title {
+        text-align: center;
+        h1 {
+            font-family: $font_stack_3;
+            font-weight: map-get($font-weights, bold);
+            font-size: 72px;
+            color: $light;
+            margin-bottom: 40px;
+        }
+        p {
+            font-family: $font_stack_1;
+            font-size: 18px;
+            line-height: 1.5;
+            color: $extra-light;
+            margin-bottom: 20px;
+            width: 700px;
+            margin: 0 auto 20px auto;
+        }
+    }
+}
+
+.no_front {
+    .section_area {
+        &.pt-12 {
+            padding-top: 120px !important;
+        }
+        &.mt-6 {
+            margin-top: 60px !important;
+        }
+    }
+    &.dark {
+        padding-top: 120px !important;
+    }
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1400px;
+    }
+}
+
+.pt-0 {
+    padding-top: 0 !important;
+}
+
+.w-90 {
+    width: 90% !important;
+    text-align: justify;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.mt-6 {
+    margin-top: 60px;
+}

@@ -1,0 +1,363 @@
+@media (max-width: 1850px) {
+    body {
+        overflow-x: hidden;
+    }
+    #success_campagnes {
+        width: 95% !important;
+    }
+}
+
+@media (max-width: 1260px) {
+    #success_campagnes {
+        height: 350px;
+        .counter-left {
+            font-size: 150px;
+        }
+        .counter-content {
+            font-size: 35px;
+            &.border-less {
+                padding-left: 0;
+            }
+        }
+        .counter {
+            .percentage {
+                font-size: 150px;
+                width: 250px;
+            }
+            .circleProgressCanvas {
+                height: 250px !important;
+                width: 250px !important;
+                top: 15px;
+            }
+        }
+    }
+    .text-block-img img {
+        width: 100% !important;
+    }
+    .text-block {
+        h1 {
+            width: 100% !important;
+            font-size: 60px;
+        }
+        p {
+            width: 100% !important;
+        }
+    }
+    .news_single_txt .txt_content {
+        transform: scale(0.9);
+        right: -170px !important;
+    }
+}
+
+@media (max-width: 1076px) {
+    body {
+        overflow-x: hidden;
+    }
+    .carousel_overlay {
+        display: none;
+    }
+    #news_slider {
+        overflow-x: visible !important;
+        .container:last-child {
+            max-width: 960px !important;
+            .txt_content {
+                width: 70% !important;
+                right: 0 !important;
+            }
+        }
+    }
+    .footer {
+        overflow: hidden;
+        .footer_logo {
+            width: 120px !important;
+        }
+        .useful-info {
+            font-size: 15px;
+        }
+        .social-icons img {
+            width: 30px;
+        }
+        .djecak {
+            text-align: right;
+            width: 30% !important;
+            height: auto !important;
+            top: auto;
+            bottom: -20px !important;
+            right: -10px !important;
+            img {
+                width: 100% !important;
+                height: auto !important;
+            }
+        }
+        .djevojcica {
+            width: 34% !important;
+            height: auto !important;
+            top: auto;
+            bottom: -19px !important;
+            img {
+                width: 100% !important;
+                height: auto !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 1200px) {
+    .banner .col-lg-6 {
+        flex: 0 0 70%;
+        max-width: 70%;
+    }
+    #success_campagnes {
+        .col-lg-6.d-flex:last-child {
+            padding-left: 0;
+            .col-lg-6:first-child {
+                padding-left: 0;
+            }
+            .col-lg-6:last-child {
+                padding-left: 40px;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .navbar {
+        background: $white;
+        .navbar-brand img {
+            content: url("../img/za-njihov-osmijeh-logo@3x.png");
+            width: 126px !important;
+        }
+        .nav-item {
+            margin-left: 0;
+            padding: 20px 0;
+            width: 70%;
+            margin: auto;
+            .nav-link {
+                color: $light;
+                text-align: center;
+            }
+            &.active::after {
+                background: $turquoise-blue;
+            }
+        }
+    }
+    .banner .col-lg-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    #success_campagnes {
+        margin-top: -100px;
+        padding: 40px 0;
+        height: auto !important;
+        .counter {
+            margin: auto;
+            height: 250px !important;
+            left: 55px;
+            margin-bottom: 20px;
+        }
+        .col-lg-6.d-flex:last-child {
+            padding-left: 0;
+            margin-top: 40px;
+            .col-lg-6:first-child {
+                padding-left: 0;
+            }
+            .col-lg-6:last-child {
+                padding-left: 40px;
+            }
+        }
+        .col-md-12 {
+            flex: 100% !important;
+            flex-direction: column;
+            .counter-left {
+                text-align: center;
+            }
+            .counter-content {
+                text-align: center;
+                border: none;
+                padding-left: 0;
+            }
+        }
+    }
+    .blog-card {
+        .blog-card-img img {
+            margin-bottom: 25px;
+        }
+    }
+    .text-block-img img {
+        margin-top: 40px;
+    }
+    #contact {
+        .col-md-12:last-child {
+            margin-top: 40px;
+        }
+        #map {
+            margin-left: 0 !important;
+        }
+    }
+    #partners {
+        .row:first-child {
+            margin-bottom: 0;
+        }
+        .col-lg-3 {
+            margin-bottom: 25px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+    #gallery {
+        h1 {
+            font-size: 30px;
+        }
+    }
+    .blog-card-img {
+        img {
+            height: auto !important;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    .banner.blog-single {
+        height: 60vh;
+    }
+    #blog-single {
+        .blog-single-header {
+            margin-top: 0;
+        }
+        .author-name {
+            font-size: 11px;
+            margin-top: 10px;
+        }
+        .col-lg-8 {
+            flex-direction: column-reverse;
+            .blog-single-share {
+                margin: auto;
+                &.d-flex {
+                    flex-direction: column;
+                    div {
+                        display: none;
+                    }
+                    ul {
+                        margin: auto;
+                    }
+                }
+            }
+            .author-info {
+                margin: 30px auto 20px auto;
+            }
+        }
+    }
+    #gallery {
+        .col-md-6 {
+            &:first-child {
+                margin-bottom: 25px;
+            }
+        }
+    }
+    #news_slider {
+        .btn_transparent {
+            margin-top: -80px;
+        }
+        .txt_content h1 {
+            font-size: 30px;
+        }
+        .owl-carousel {
+            .owl-item img {
+                width: 60%;
+            }
+            .news_single_txt .txt_content {
+                height: auto !important;
+                top: 0 !important;
+            }
+        }
+    }
+}
+
+@media (max-width: 657px) {
+    #blog-single {
+        h1 {
+            font-size: 30px;
+        }
+    }
+    #news_slider {
+        .btn_transparent {
+            margin-top: -80px;
+        }
+        .txt_content h1 {
+            font-size: 30px;
+        }
+        .owl-carousel {
+            .owl-item img {
+                width: 60%;
+            }
+            .txt_content {
+                bottom: 0;
+            }
+        }
+        p {
+            display: none;
+        }
+    }
+}
+
+@media (max-width: 590px) {
+    #success_campagnes {
+        .counter-left {
+            font-size: 100px;
+        }
+        .counter-content {
+            font-size: 25px;
+            &.border-less {
+                margin-top: -45px !important;
+            }
+        }
+        .counter {
+            left: 75px;
+            .percentage {
+                font-size: 100px;
+                width: 200px !important;
+                top: 40%;
+            }
+            .circleProgressCanvas {
+                width: 200px !important;
+                height: 200px !important;
+            }
+        }
+    }
+    .text-block {
+        h1 {
+            font-size: 40px;
+        }
+        p {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
+    #blog {
+        h1 {
+            font-size: 35px !important;
+        }
+    }
+    .author-info {
+        .author-name {
+            font-size: 14px;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    .text-block {
+        .d-flex {
+            flex-direction: column;
+        }
+        p {
+            font-size: 16px;
+        }
+    }
+    #gallery {
+        h1 {
+            font-size: 25px;
+        }
+    }
+}

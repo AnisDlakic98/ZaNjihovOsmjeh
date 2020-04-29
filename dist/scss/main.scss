@@ -1,0 +1,27 @@
+/*
+-------------------------------------------
+File Name: main.scss
+Created By: Anis Dlakic
+Website: ZaNjihovOsmjeh
+Version: 1.0
+-------------------------------------------
+*/
+
+// variable scss
+@import "variables";
+// mixin scss
+@import "mixins";
+// default scss
+@import "common";
+// body scss
+@import "navbar";
+@import "banner";
+@import "btns";
+@import "elements";
+@import "counters";
+@import "forms";
+@import "carousel";
+@import "footer";
+@import "multi-stepper";
+@import "popup";
+@import "responsive";

@@ -1,0 +1,125 @@
+.nav-pills {
+    .nav-link.active,
+    .show>.nav-link {
+        background: linear-gradient(to bottom, $turquoise-blue, $teal-blue);
+        position: relative;
+        &::after {
+            content: "";
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(to bottom, #2e94b1, #00859f);
+            position: absolute;
+            top: 50%;
+            right: 0;
+            z-index: -1;
+            transform: translateY(-50%) rotate(45deg);
+        }
+    }
+    .nav-item {
+        &:last-child .nav-link {
+            margin-bottom: 0;
+        }
+    }
+    .nav-link {
+        height: 200px;
+        text-align: center;
+        display: flex;
+        background: #dedede;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        .nav-link-content {
+            margin: auto;
+            div {
+                margin-top: 20px;
+                font-family: $font_stack_1;
+                font-size: 20px;
+                font-weight: map-get($font-weights, bold);
+                line-height: 1.25;
+                color: $white;
+            }
+        }
+    }
+}
+
+.styled-checkbox {
+    position: absolute;
+    opacity: 0;
+    &:checked+label {
+        border-color: $teal-blue;
+        &::after {
+            opacity: 1;
+        }
+    }
+    &+label {
+        position: relative;
+        cursor: pointer;
+        padding: 0;
+        width: 100%;
+        border-radius: 10px;
+        border: solid 2px rgba(139, 146, 171, 0.22);
+        width: 100%;
+        height: 70px;
+        line-height: 65px;
+        font-family: $font_stack_1;
+        font-size: 18px;
+        font-weight: map-get($font-weights, semi-bold);
+        color: $extra-light;
+        padding: 0 20px;
+        cursor: pointer;
+        outline: none;
+        box-shadow: none;
+        &::after {
+            content: url("../img/multistep/path-430.svg");
+            position: absolute;
+            top: 0;
+            opacity: 0;
+            right: 20px;
+        }
+        &:focus {
+            border-color: $teal-blue;
+        }
+    }
+}
+
+.col-md-3 {
+    display: flex;
+    flex-direction: column;
+    height: 630px;
+    .selected_items {
+        border: dashed 2px rgba(139, 146, 171, 0.53);
+        width: 100%;
+        padding: 20px;
+        height: 100%;
+        overflow-y: scroll;
+        span {
+            font-size: 20px;
+            font-weight: map-get($font-weights, bold);
+            display: block;
+            margin-bottom: 25px;
+        }
+        .selected_item_single {
+            font-family: Muli;
+            font-size: 18px;
+            font-weight: map-get($font-weights, bold);
+            color: $extra-light;
+            position: relative;
+            cursor: pointer;
+            transition: 0.4s;
+            margin: 10px 0;
+            &::after {
+                content: url("../img/multistep/group-417.svg");
+                position: absolute;
+                top: 0;
+                opacity: 0;
+                right: 0;
+                transition: 0.4s;
+            }
+            &:hover {
+                color: $selected;
+                &::after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+.contact_form {
+    padding-right: 40px;
+}
+
+.form-control,
+textarea {
+    width: 100%;
+    color: $light;
+    opacity: 1;
+    font-family: $font_stack_1;
+    font-size: 20px;
+    outline: none !important;
+    box-shadow: none !important;
+    border: none;
+    border-bottom: 2px solid lighten($extra-light, 30%);
+    margin-bottom: 40px !important;
+    padding-left: 0.75rem;
+    transition: 0.4s;
+    &::placeholder {
+        color: $extra-light;
+        opacity: 0.5;
+    }
+    &:focus {
+        border-color: $turquoise-blue;
+    }
+}

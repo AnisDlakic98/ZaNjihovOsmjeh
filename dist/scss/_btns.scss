@@ -1,0 +1,49 @@
+/*
+-------------------------------------------
+BUTTONS
+-------------------------------------------
+*/
+
+.btn {
+    transition: 0.4s;
+    border-radius: 35px;
+    padding: 14px 45px;
+    font-size: 17px;
+    outline: none !important;
+    font-weight: map-get($font-weights, strong);
+    &#{&}_primary {
+        box-shadow: 0 3px 18px 0 rgba(6, 170, 202, 0.3);
+        background: $turquoise-blue;
+        color: $white;
+        border: solid 2px $turquoise-blue;
+        &:hover {
+            border-color: $extra-light;
+            color: $extra-light;
+            background: transparent;
+            box-shadow: none;
+        }
+    }
+    &#{&}_transparent {
+        color: $turquoise-blue;
+        padding: 0;
+        img {
+            transition: 0.4s;
+            position: relative;
+        }
+    }
+    &#{&}_secondary {
+        background: transparent;
+        border: solid 2px $white;
+        color: $white;
+        &.dark {
+            border-color: $turquoise-blue;
+            color: $turquoise-blue;
+        }
+        &:hover {
+            border-color: $turquoise-blue;
+            color: $white;
+            background: $turquoise-blue;
+            box-shadow: 0 3px 18px 0 rgba(6, 170, 202, 0.3);
+        }
+    }
+}

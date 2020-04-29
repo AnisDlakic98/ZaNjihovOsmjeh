@@ -1,0 +1,21 @@
+/*
+-------------------------------------------
+BANNER
+-------------------------------------------
+*/
+
+.banner {
+    @include background("../img/group-101@3x.png", left, cover, no-repeat);
+    display: flex;
+    height: 1080px;
+    .container {
+        margin: auto;
+        .btn {
+            margin-top: 40px;
+        }
+    }
+    &.blog-single {
+        height: 80vh;
+        background-position: 0 -100px;
+    }
+}
