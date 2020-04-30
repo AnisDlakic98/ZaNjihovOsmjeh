@@ -5,7 +5,7 @@ BANNER
 */
 
 .banner {
-    @include background("../img/group-101@3x.png", left, cover, no-repeat);
+    @include background("../img/banner/group-101.png", left, cover, no-repeat);
     display: flex;
     height: 1080px;
     .container {
