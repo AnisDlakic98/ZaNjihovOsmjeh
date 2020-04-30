@@ -12,16 +12,22 @@ $(function() {
         }
     });
 
-    $(".navbar-toggler").on("click", function(e) {
-        e.preventDefault();
-        if ($(".hamburger").hasClass("active-menu")) {
-            $(".hamburger").removeClass("active-menu");
-        } else {
-            $(".hamburger").addClass("active-menu");
-        }
+    $(window).load(function() {
+        setTimeout(function() {
+            $(".preloader").fadeOut();
+        }, 1000);
     });
+});
 
-    $(".nav-item").hover(function() {
-        $(this).toggleClass("active");
-    });
+$(".navbar-toggler").on("click", function(e) {
+    e.preventDefault();
+    if ($(".hamburger").hasClass("active-menu")) {
+        $(".hamburger").removeClass("active-menu");
+    } else {
+        $(".hamburger").addClass("active-menu");
+    }
+});
+
+$(".nav-item").hover(function() {
+    $(this).toggleClass("active");
 });
