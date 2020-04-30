@@ -17,6 +17,40 @@ $(function() {
             $(".preloader").fadeOut();
         }, 1000);
     });
+
+    $("#carousel").owlCarousel({
+        // autoplay: true,
+        lazyLoad: true,
+        loop: true,
+
+        animateOut: "fadeOut",
+        animateIn: "fadeIn",
+        margin: 150,
+        responsiveClass: true,
+        autoHeight: true,
+        autoplayTimeout: 7000,
+        smartSpeed: 800,
+        // stagePadding: 50,
+        nav: true,
+        responsive: {
+            0: {
+                items: 1,
+            },
+
+            600: {
+                items: 1,
+            },
+
+            1076: {
+                margin: 150,
+                items: 2,
+            },
+
+            1366: {
+                items: 2,
+            },
+        },
+    });
 });
 
 $(".navbar-toggler").on("click", function(e) {
