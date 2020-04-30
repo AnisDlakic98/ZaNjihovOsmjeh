@@ -902,6 +902,15 @@ input {
   padding-right: 40px;
 }
 
+.contact_form .input_err {
+  display: none;
+}
+
+.contact_form .error_show {
+  color: #c62121;
+  font-weight: 500;
+}
+
 .form-control,
 textarea {
   width: 100%;

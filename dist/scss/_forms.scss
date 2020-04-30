@@ -1,5 +1,12 @@
 .contact_form {
     padding-right: 40px;
+    .input_err {
+        display: none;
+    }
+    .error_show {
+        color: rgb(198, 33, 33);
+        font-weight: 500;
+    }
 }
 
 .form-control,

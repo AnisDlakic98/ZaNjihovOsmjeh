@@ -25,19 +25,19 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css" />
     <link rel="stylesheet" href="vendor/owl-carousel/dist/assets/owl.carousel.min.css" />
     <link rel="stylesheet" href="vendor/owl-carousel/dist/assets/owl.theme.default.min.css" />
-    <!-- Site Icons -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.css" />
     <!-- Theme Style -->
     <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
-    <div class="preloader">
+    <!-- <div class="preloader">
         <div class="loader">
             <div class="shadow"></div>
             <div class="box"></div>
         </div>
-    </div>
+    </div> -->
     <!-- Navbar-->
     <header class="header">
         <nav class="navbar navbar-expand-lg fixed-top">
@@ -240,82 +240,121 @@
                             <div class="row">
                                 <div class="col-lg-6">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" id="nameSurname" placeholder="Ime i Prezime" />
-                                    </div>
-                                </div>
-                                <div class="col-lg-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" id="email" placeholder="E-mail" />
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <div class="form-group">
-                                        <textarea rows="5" id="message" placeholder="Poruka"></textarea>
-                                    </div>
-                                </div>
-                                <div class="col-lg-12">
-                                    <a href="#" class="btn btn_primary">Pošalji</a>
-                                </div>
-                            </div>
-                        </form>
+                                        <span class="input_err"><sup>*</sup>Molimo Vas unesite ime i prezime!</span
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="nameSurname"
+                        id="nameSurname"
+                        placeholder="Ime i Prezime"
+                      />
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-12">
-                    <div class="text-block light_bg">
-                        <h1>Adresa</h1>
-                        <div class="d-flex">
-                            <div>
-                                <img src="img/path-15.svg" alt="tilda_icon" class="hidden" />
-                            </div>
-                            <div>
-                                <p>
-                                    Ekonomski fakultet, Ul. Jovana Tomaševića br. 37, Podgorica
-                                </p>
-                            </div>
-                        </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <span class="input_err"
+                        ><sup>*</sup>Molimo Vas unesite validan email!</span
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        name="email"
+                        id="email"
+                        placeholder="E-mail"
+                      />
                     </div>
-                    <!-- google map -->
-                    <div id="map"></div>
-                    <div class="rectangle right"></div>
+                  </div>
+                  <div class="col-lg-12">
+                    <div class="form-group">
+                      <span class="input_err"
+                        ><sup>*</sup>Poruka mora imati minumum 10 slova!</span
+                      >
+                      <textarea
+                        rows="5"
+                        id="message"
+                        name="message"
+                        placeholder="Poruka"
+                      ></textarea>
+                    </div>
+                  </div>
+                  <div class="col-lg-12">
+                    <button id="contactSubmit" class="btn btn_primary">
+                      Pošalji
+                    </button>
+                  </div>
                 </div>
+              </form>
             </div>
+          </div>
+          <div class="col-lg-6 col-md-12">
+            <div class="text-block light_bg">
+              <h1>Adresa</h1>
+              <div class="d-flex">
+                <div>
+                  <img src="img/path-15.svg" alt="tilda_icon" class="hidden" />
+                </div>
+                <div>
+                  <p>
+                    Ekonomski fakultet, Ul. Jovana Tomaševića br. 37, Podgorica
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- google map -->
+            <div id="map"></div>
+            <div class="rectangle right"></div>
+          </div>
         </div>
+      </div>
     </section>
 
     <footer class="footer">
-        <div class="container">
-            <div class="djevojcica">
-                <img src="img/djevojcica.svg" alt="ft_icon" width="448" height="380" />
-            </div>
-            <div class="djecak">
-                <img src="img/djecak.svg" alt="ft_icon" width="370" height="380" />
-            </div>
-            <div class="row text-center">
-                <div class="col-md-6 m-auto">
-                    <img src="img/za-njihov-osmijeh-logo-white@2x.png" class="footer_logo" alt="footer_logo" />
-                    <div class="useful-info">
-                        <ul>
-                            <li>NVO „Nacionalni osmijeh“</li>
-                            <li>info@nacionalniosmijeh.me</li>
-                            <hr />
-                            <li class="mb-2">068 291 117</li>
-                        </ul>
-                    </div>
-                    <ul class="social-icons">
-                        <li>
-                            <a href="#" target="_blank"><img src="img/001-facebook.svg" alt="fb_icon" /></a>
-                        </li>
-                        <li>
-                            <a href="#" target="_blank"><img src="img/002-instagram.svg" alt="ig_icon" /></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
+      <div class="container">
+        <div class="djevojcica">
+          <img
+            src="img/djevojcica.svg"
+            alt="ft_icon"
+            width="448"
+            height="380"
+          />
         </div>
+        <div class="djecak">
+          <img src="img/djecak.svg" alt="ft_icon" width="370" height="380" />
+        </div>
+        <div class="row text-center">
+          <div class="col-md-6 m-auto">
+            <img
+              src="img/za-njihov-osmijeh-logo-white@2x.png"
+              class="footer_logo"
+              alt="footer_logo"
+            />
+            <div class="useful-info">
+              <ul>
+                <li>NVO „Nacionalni osmijeh“</li>
+                <li>info@nacionalniosmijeh.me</li>
+                <hr />
+                <li class="mb-2">068 291 117</li>
+              </ul>
+            </div>
+            <ul class="social-icons">
+              <li>
+                <a href="#" target="_blank"
+                  ><img src="img/001-facebook.svg" alt="fb_icon"
+                /></a>
+              </li>
+              <li>
+                <a href="#" target="_blank"
+                  ><img src="img/002-instagram.svg" alt="ig_icon"
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </footer>
 
     <!-- jQuery Files -->
-    <!-- <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="js/google-map.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA24MlF2C49kzFRdQLINiiBSZoBvF9HNm4&callback=initMap"></script>
@@ -325,7 +364,8 @@
     <script src="vendor/owl-carousel/dist/owl.carousel.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="js/circular-counter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-sweetalert/1.0.1/sweetalert.min.js"></script>
     <script src="js/main.js"></script>
-</body>
-
+    <script src="js/validation.js"></script>
+  </body>
 </html>
