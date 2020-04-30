@@ -416,3 +416,7 @@ noscript p{
 		background-position: 8px 11px !important;
 	}
 }
+
+#documenter_sidebar #documenter_logo {
+	background-size: contain;
+}
