@@ -1,0 +1,552 @@
+<!doctype html>
+<!--[if IE 6 ]><html lang="en-us" class="ie6"> <![endif]-->
+<!--[if IE 7 ]><html lang="en-us" class="ie7"> <![endif]-->
+<!--[if IE 8 ]><html lang="en-us" class="ie8"> <![endif]-->
+<!--[if (gt IE 7)|!(IE)]><!-->
+<html lang="en-us"><!--<![endif]-->
+<head>
+	<meta charset="utf-8">
+
+	<title>Za njihov osmijeh - Web Aplikacija za Donacije</title>
+
+	<meta name="description" content="">
+	<meta name="author" content="Anis Dlakić">
+	<meta name="copyright" content="Anis Dlakić">
+	<meta name="generator" content="Documenter v2.0 https://evp.to/documenter">
+	<meta name="date" content="2020-04-30T00:00:00+02:00">
+
+	<link rel="stylesheet" href="assets/css/documenter_style.css" media="all">
+	<link rel="stylesheet" href="assets/js/google-code-prettify/prettify.css" media="screen">
+	<script src="assets/js/google-code-prettify/prettify.js"></script>
+
+	
+	
+	<script src="assets/js/jquery.js"></script>
+	
+	<script src="assets/js/jquery.scrollTo.js"></script>
+	<script src="assets/js/jquery.easing.js"></script>
+
+	<script>document.createElement('section');var duration='500',easing='swing';</script>
+	<script src="assets/js/script.js"></script>
+
+	<style>
+		html{background-color:#FFFFFF;color:#383838;}
+		::-moz-selection{background:#444444;color:#DDDDDD;}
+		::selection{background:#444444;color:#DDDDDD;}
+		#documenter_sidebar #documenter_logo{background-image:url(http://nacionalniosmijeh.me/images/logo.png);}
+		a{color:#0000FF;}
+		.btn {
+			border-radius:3px;
+		}
+		.btn-primary {
+			  background-image: -moz-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -ms-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -webkit-gradient(linear, 0 0, 0 0088CC%, from(#DDDDDD), to(#0044CC));
+			  background-image: -webkit-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: -o-linear-gradient(top, #0088CC, #0044CC);
+			  background-image: linear-gradient(top, #0088CC, #0044CC);
+			  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#0088CC', endColorstr='#0044CC', GradientType=0);
+			  border-color: #0044CC #0044CC #bfbfbf;
+			  color:#FFFFFF;
+		}
+		.btn-primary:hover,
+		.btn-primary:active,
+		.btn-primary.active,
+		.btn-primary.disabled,
+		.btn-primary[disabled] {
+		  border-color: #0088CC #0088CC #bfbfbf;
+		  background-color: #0044CC;
+		}
+		hr{border-top:1px solid #EBEBEB;border-bottom:1px solid #FFFFFF;}
+		#documenter_sidebar, #documenter_sidebar ul a{background-color:#DDDDDD;color:#222222;}
+		#documenter_sidebar ul a{-webkit-text-shadow:1px 1px 0px #EEEEEE;-moz-text-shadow:1px 1px 0px #EEEEEE;text-shadow:1px 1px 0px #EEEEEE;}
+		#documenter_sidebar ul{border-top:1px solid #AAAAAA;}
+		#documenter_sidebar ul a{border-top:1px solid #EEEEEE;border-bottom:1px solid #AAAAAA;color:#444444;}
+		#documenter_sidebar ul a:hover{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_sidebar ul a.current{background:#444444;color:#DDDDDD;border-top:1px solid #444444;}
+		#documenter_copyright{display:block !important;visibility:visible !important;}
+	</style>
+
+</head>
+<body class="documenter-project-za-njihov-osmijeh">
+	<div id="documenter_sidebar">
+		<a href="#documenter_cover" id="documenter_logo"></a>
+		<ul id="documenter_nav">
+			<li><a class="current" href="#documenter_cover">Start</a></li>
+				
+			<li><a href="#instalacija" title="Instalacija">Instalacija</a></li>
+			<li><a href="#struktura_fajlova" title="Struktura Fajlova">Struktura Fajlova</a></li>
+			<li><a href="#html_struktura" title="HTML Struktura">HTML Struktura</a></li>
+			<li><a href="#vendor" title="Vendor">Vendor</a></li>
+			<li><a href="#ure_ivanje_i_css" title="Uređivanje i CSS">Uređivanje i CSS</a>
+				<ul>
+					<li><a href="#ure_ivanje_i_css_izmjena_boje">Izmjena boje</a>
+					<li><a href="#ure_ivanje_i_css_izmjena_slika">Izmjena Slika</a>
+				</ul>
+			</li>
+			<li><a href="#google_mape" title="Google Mape">Google Mape</a>
+				<ul>
+					<li><a href="#google_mape_dodavanje_novog_api_kljuae">Dodavanje novog API ključa</a>
+					<li><a href="#google_mape_ureae">Uređivanje</a>
+					<li><a href="#google_mape_map_marker_ikonica_">Map Marker (ikonica)</a>
+				</ul>
+			</li>
+			<li><a href="#internet_ivori_i_biblioteke" title="Internet Ivori i Biblioteke">Internet Ivori i Biblioteke</a></li>
+
+		</ul>
+		<div id="documenter_copyright">Copyright Anis Dlakić 2020<br>
+		made with the <a href="https://evp.to/documenter">Documenter v2.0</a>
+		</div>
+	</div>
+	<div id="documenter_content">
+	<section id="documenter_cover">
+	<h1>Za njihov osmijeh</h1>
+	<h2>Web Aplikacija za Donacije</h2>
+	<div id="documenter_buttons">
+		<a href="http://nacionalniosmijeh.me/" class="btn btn-primary btn-large">Live Demo</a> <a href="https://github.com/AnisDlakic98/ZaNjihovOsmjeh/tree/develop1" class="btn btn-large">Github Page</a> 
+	</div>
+	<hr>
+	<ul>
+	<li>created: 04/30/2020</li>
+	<li>latest update: 04/30/2020</li>
+	<li>by: Anis Dlakić</li>
+	<li><a href="http://nacionalniosmijeh.me/">nacionalniosmijeh.me/</a></li>
+	<li>email: <a href="mailto:&#97;&#110;&#105;&#115;&#46;&#100;&#108;&#97;&#107;&#105;&#99;&#46;&#102;&#105;&#116;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;">&#97;&#110;&#105;&#115;&#46;&#100;&#108;&#97;&#107;&#105;&#99;&#46;&#102;&#105;&#116;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></li>
+	</ul>
+	<p>Postoji jedan životni fakultet koji studiraju oni koji imaju volju da izmame što više iskrenih osmijeha djeci koja žive bez roditelja. On proizvodi najbolje kadrove iz ove oblasti u našoj zemlji već duže od decenije i ne planira da se zaustavi. Upisuje sve kandidate dobre volje, pa nemojte brinuti da li za vas ima mjesta. Ukoliko želite, samo zakoračite unutra. Lako ćete ga pronaći, na njemu je velikim slovima ispisan grafit NJIHOV OSMIJEH VRIJEDI VIŠE! Ispitni rok je, za omladinu iz svih gradova Crne Gore, svake godine u aprilu!</p>
+	</section>
+
+	<section id="instalacija">
+	<div class="page-header"><h3>Instalacija</h3><hr class="notop"></div>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	Preuzeti fajlove sa github repozitorijuma&nbsp;<a href="https://github.com/AnisDlakic98/ZaNjihovOsmjeh/tree/develop1" style="font-family: Arial, Verdana, sans-serif;">https://github.com/AnisDlakic98/ZaNjihovOsmjeh/tree/develop1</a>. Repozitorijum sadrži sledeće:</p>
+<pre class="plain" style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+folder <strong>dist</strong> u kome se nalaze template fajlova
+<strong>README.md </strong>fajl (upustvo za instalaciju) - obavezno pročitati
+<strong>db.json </strong>- testni podaci</pre>
+<p>
+	Instalacija JSON Servera</p>
+<pre class="prettyprint lang-js linenums">
+npm install -g json-server</pre>
+<p>
+	Pokrenuti&nbsp;JSON Server</p>
+<pre class="prettyprint lang-js linenums">
+json-server --watch db.json</pre>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	Izmijeniti db.json</p>
+<pre class="prettyprint lang-js linenums" style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace; font-size: 13.6px; margin-top: 0px; overflow-wrap: normal; padding: 16px; overflow: auto; line-height: 1.45; background-color: rgb(246, 248, 250); border-radius: 3px; color: rgb(36, 41, 46); margin-bottom: 0px !important;">
+<code style="box-sizing: border-box; font-family: SFMono-Regular, Consolas, &quot;Liberation Mono&quot;, Menlo, monospace; font-size: 13.6px; padding: 0px; margin: 0px; background: initial; border-radius: 3px; word-break: normal; border: 0px; display: inline; overflow: visible; line-height: inherit; overflow-wrap: normal;">{
+    &quot;categories&quot;: [{
+            &quot;id&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;Odjeća i Obuća&quot;,
+            &quot;shortName&quot;: &quot;odjecaIObuca&quot;,
+            &quot;image&quot;: &quot;img/multistep/002-shirt.svg&quot;,
+            &quot;options&quot;: [{
+                &quot;age&quot;: [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17],
+                &quot;size&quot;: [&quot;XS&quot;, &quot;S&quot;, &quot;M&quot;, &quot;L&quot;, &quot;XL&quot;, &quot;XXL&quot;],
+                &quot;priceRange&quot;: &quot;2-30&quot;,
+                &quot;quantity&quot;: 10
+            }]
+        },
+        {
+            &quot;id&quot;: &quot;2&quot;,
+            &quot;name&quot;: &quot;Higijena&quot;,
+            &quot;shortName&quot;: &quot;higijena&quot;,
+            &quot;image&quot;: &quot;img/multistep/stationery.svg&quot;,
+            &quot;options&quot;: [{
+                &quot;priceRange&quot;: &quot;2-10&quot;,
+                &quot;quantity&quot;: 10
+            }]
+        },
+        {
+            &quot;id&quot;: &quot;3&quot;,
+            &quot;name&quot;: &quot;&Scaron;kolski pribor i igračke&quot;,
+            &quot;shortName&quot;: &quot;skolskiPribor&quot;,
+            &quot;image&quot;: &quot;img/multistep/003-toothbrush.svg&quot;,
+            &quot;options&quot;: [{
+                &quot;priceRange&quot;: &quot;1-10&quot;,
+                &quot;quantity&quot;: 10
+            }]
+        }
+    ],
+    &quot;items&quot;: [{
+            &quot;id&quot;: &quot;1&quot;,
+            &quot;categoryId&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;Trenerke&quot;,
+            &quot;shortName&quot;: &quot;trenerke&quot;
+        },
+        {
+            &quot;id&quot;: &quot;2&quot;,
+            &quot;categoryId&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;Majice&quot;,
+            &quot;shortName&quot;: &quot;majice&quot;
+        },
+        {
+            &quot;id&quot;: &quot;3&quot;,
+            &quot;categoryId&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;Trik majice&quot;,
+            &quot;shortName&quot;: &quot;trikMajice&quot;
+        },
+        {
+            &quot;id&quot;: &quot;4&quot;,
+            &quot;categoryId&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;Donji Ve&scaron;&quot;,
+            &quot;shortName&quot;: &quot;donjiVes&quot;
+        },
+        {
+            &quot;id&quot;: &quot;5&quot;,
+            &quot;categoryId&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;Čarape&quot;,
+            &quot;shortName&quot;: &quot;carape&quot;
+        },
+        {
+            &quot;id&quot;: &quot;6&quot;,
+            &quot;categoryId&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;Pe&scaron;kiri&quot;,
+            &quot;shortName&quot;: &quot;peskiri&quot;
+        },
+        {
+            &quot;id&quot;: &quot;7&quot;,
+            &quot;categoryId&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;Patike&quot;,
+            &quot;shortName&quot;: &quot;patike&quot;
+        },
+        {
+            &quot;id&quot;: &quot;8&quot;,
+            &quot;categoryId&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;Fla&scaron;ica za bebe&quot;,
+            &quot;shortName&quot;: &quot;flasicaZaBebe&quot;
+        },
+        {
+            &quot;id&quot;: &quot;9&quot;,
+            &quot;categoryId&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;Ćebence&quot;,
+            &quot;shortName&quot;: &quot;cebence&quot;
+        },
+        {
+            &quot;id&quot;: &quot;10&quot;,
+            &quot;categoryId&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;Pape&quot;,
+            &quot;shortName&quot;: &quot;pape&quot;
+        },
+        {
+            &quot;id&quot;: &quot;11&quot;,
+            &quot;categoryId&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;Pidzama&quot;,
+            &quot;shortName&quot;: &quot;pidzama&quot;
+        },
+        {
+            &quot;id&quot;: &quot;12&quot;,
+            &quot;categoryId&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;Zimska kapa&quot;,
+            &quot;shortName&quot;: &quot;zimskaKapa&quot;
+        },
+        {
+            &quot;id&quot;: &quot;13&quot;,
+            &quot;categoryId&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;Papuče&quot;,
+            &quot;shortName&quot;: &quot;papuce&quot;
+        },
+        {
+            &quot;id&quot;: &quot;14&quot;,
+            &quot;categoryId&quot;: &quot;1&quot;,
+            &quot;name&quot;: &quot;Hulahopke&quot;,
+            &quot;shortName&quot;: &quot;hulahopke&quot;
+        },
+        {
+            &quot;id&quot;: &quot;15&quot;,
+            &quot;categoryId&quot;: &quot;2&quot;,
+            &quot;name&quot;: &quot;Dezedorans&quot;,
+            &quot;shortName&quot;: &quot;dezedorans&quot;
+        },
+        {
+            &quot;id&quot;: &quot;16&quot;,
+            &quot;categoryId&quot;: &quot;2&quot;,
+            &quot;name&quot;: &quot;Kupka&quot;,
+            &quot;shortName&quot;: &quot;kupka&quot;
+        },
+        {
+            &quot;id&quot;: &quot;17&quot;,
+            &quot;categoryId&quot;: &quot;2&quot;,
+            &quot;name&quot;: &quot;&Scaron;ampon&quot;,
+            &quot;shortName&quot;: &quot;sampon&quot;
+        },
+        {
+            &quot;id&quot;: &quot;18&quot;,
+            &quot;categoryId&quot;: &quot;2&quot;,
+            &quot;name&quot;: &quot;Četkica za zube&quot;,
+            &quot;shortName&quot;: &quot;cetkicaZaZube&quot;
+        },
+        {
+            &quot;id&quot;: &quot;19&quot;,
+            &quot;categoryId&quot;: &quot;2&quot;,
+            &quot;name&quot;: &quot;Vlažne maramice&quot;,
+            &quot;shortName&quot;: &quot;vlazneMaramice&quot;
+        },
+        {
+            &quot;id&quot;: &quot;20&quot;,
+            &quot;categoryId&quot;: &quot;2&quot;,
+            &quot;name&quot;: &quot;&Scaron;tapići za u&scaron;i&quot;,
+            &quot;shortName&quot;: &quot;stapiciZaUsi&quot;
+        },
+        {
+            &quot;id&quot;: &quot;21&quot;,
+            &quot;categoryId&quot;: &quot;2&quot;,
+            &quot;name&quot;: &quot;Pasta za zube&quot;,
+            &quot;shortName&quot;: &quot;pastaZaZube&quot;
+        },
+        {
+            &quot;id&quot;: &quot;22&quot;,
+            &quot;categoryId&quot;: &quot;2&quot;,
+            &quot;name&quot;: &quot;&Scaron;ampon za bebe&quot;,
+            &quot;shortName&quot;: &quot;samponZaBebe&quot;
+        },
+        {
+            &quot;id&quot;: &quot;23&quot;,
+            &quot;categoryId&quot;: &quot;3&quot;,
+            &quot;name&quot;: &quot;Glodalica&quot;,
+            &quot;shortName&quot;: &quot;glodalica&quot;
+        },
+        {
+            &quot;id&quot;: &quot;24&quot;,
+            &quot;categoryId&quot;: &quot;3&quot;,
+            &quot;name&quot;: &quot;Igračke&quot;,
+            &quot;shortName&quot;: &quot;igracke&quot;
+        },
+        {
+            &quot;id&quot;: &quot;25&quot;,
+            &quot;categoryId&quot;: &quot;3&quot;,
+            &quot;name&quot;: &quot;Sveske&quot;,
+            &quot;shortName&quot;: &quot;sveske&quot;
+        },
+        {
+            &quot;id&quot;: &quot;26&quot;,
+            &quot;categoryId&quot;: &quot;3&quot;,
+            &quot;name&quot;: &quot;Bojanka&quot;,
+            &quot;shortName&quot;: &quot;bojanka&quot;
+        },
+        {
+            &quot;id&quot;: &quot;27&quot;,
+            &quot;categoryId&quot;: &quot;3&quot;,
+            &quot;name&quot;: &quot;Bojice&quot;,
+            &quot;shortName&quot;: &quot;bojice&quot;
+        },
+        {
+            &quot;id&quot;: &quot;28&quot;,
+            &quot;categoryId&quot;: &quot;3&quot;,
+            &quot;name&quot;: &quot;Ranac&quot;,
+            &quot;shortName&quot;: &quot;ranac&quot;
+        }
+    ]
+}</code></pre>
+</section>
+<section id="struktura_fajlova">
+	<div class="page-header"><h3>Struktura Fajlova</h3><hr class="notop"></div>
+<pre class="prettyprint lang-js linenums">
+CSS <strong>Struktura</strong>
+
+- <strong>animate.css </strong>(predefinisane css animacije)
+
+- <strong>fontawesome.min.css </strong>(webkit ikonice)
+
+- <strong>main.css</strong> (kompletan css)
+
+- <strong>main.scss</strong> (kompletan scss)</pre>
+<p>
+	&nbsp;</p>
+<pre class="prettyprint lang-js linenums">
+JS <strong>Struktura</strong>
+
+- <strong>circular-counter.js</strong> (brojači na početnoj strani)
+
+- <strong>donation.js</strong> (multi-step forma za donacije)
+
+- <strong>validation.js</strong> (validacija za forme)
+
+- <strong>main.js</strong> (glavni js fajl)</pre>
+</section>
+<section id="html_struktura">
+	<div class="page-header"><h3>HTML Struktura</h3><hr class="notop"></div>
+<p>
+	<strong>Ova aplikacija koristi Bootstrap</strong>&nbsp; koji je kompatibilan sa svim web pretraživačima (browser-ima) kao &scaron;to su <strong>Google Chrome</strong>, <strong>Safari</strong>, <strong>Firefox</strong>, Internet Explorer i Opera. <strong>Bootstrap</strong> je od verzije 2.0 podržavao responsive dizajn. To je značilo da će se sajtovi u Bootstrap-u ubuduće biti dostupni za sve veličine ekrana i da je dizajn web stranica potpuno dinamičan i prilagodljiv. Od verzije 3.0 <strong>Bootstrap</strong> je usvojio mobile first dizajnersku filozofiju, gde je responsive (prilagodljiv) dizajn postao standardan.</p>
+<p>
+	<span style="color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif; font-size: 20px;">Boostrap 4.3.x Layout</span></p>
+<pre class="prettyprint lang-js linenums">
+&lt;div class=&quot;container&quot;&gt;
+    &lt;div class=&quot;row&quot;&gt;
+        &lt;div class=&quot;col-md-12&quot;&gt; ... &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</pre>
+<p>
+	Za vi&scaron;e informacija posjetite: <a href="http://getbootstrap.com/">http://getbootstrap.com/</a></p>
+<p>
+	<span style="color: rgb(56, 56, 56); font-family: Arial, verdana, arial, sans-serif; font-size: 20px;">Stranice&nbsp;</span></p>
+<pre class="prettyprint lang-js linenums">
+- <strong>Početna</strong> (index.html)
+- <strong>Doniraj</strong> (donate.html)
+- <strong>Vijesti</strong> (news.html)
+- <strong>Blog</strong> (Single Blog) (blog.html, blog-single.html)
+- <strong>Galerija</strong> (gallery.html)
+- <strong>Prijatelji</strong> (partners.html)
+- <strong>Kontakt</strong> (contact.html)</pre>
+<p>
+	&nbsp;</p>
+</section>
+<section id="vendor">
+	<div class="page-header"><h3>Vendor</h3><hr class="notop"></div>
+<p>
+	Direktorijum pod nazivom &quot;<strong>Vendor</strong>&quot; sadrži sve potrebne JavaScript dodatke za ovu web aplikaciju.</p>
+<pre class="prettyprint lang-js linenums">
+1. <strong>Bootstrap</strong> (framework za izgradnju prilagodivih, mobilnih web lokacija,)
+
+2. <strong>Jquery</strong> (JavaScript Biblioteka)
+
+3. <strong>Nice Select</strong> (jQuery plugin koji zamjenjuje podrazumijevani select)
+
+4. <strong>Owl Carousel </strong>(jQuery plugin koji omogućuje da napravite prekrasan slajder)
+
+5. <strong>Sweet Alert</strong> (Zamjena za klasične JS popup-ove)
+
+6. <strong>Jquery Ui</strong> (Kolekcija GUI widgeta, animiranih vizualnih efekata i tema implementiranih s jQuery-om)</pre>
+</section>
+<section id="ure_ivanje_i_css">
+	<div class="page-header"><h3>Uređivanje i CSS</h3><hr class="notop"></div>
+<p>
+	<strong>CSS, JS, HTML</strong> datoteke su stvorene na principu modularnosti. Ako vam nisu potrebni svi elementi za va&scaron;u web aplikaciju, lako možete ukloniti nepotrebne komponente. Kod je lijepo formatiran i adektavtno odvojen komentarima. To olak&scaron;ava uređivanje i prilagođavanje dizajna aplikacije. Također, za bolje performanse možete kompresovati (umanjiti) svoje datoteke pomoću internetskih usluga za minifikovanje ili bilo koje druge metode koja vam se sviđa.</p>
+<div class="alert alert-info" style="box-sizing: border-box; margin-top: 18px; margin-bottom: 18px; padding: 0px; border-width: 0px; border-style: initial; border-color: initial; outline: 0px; font-size: 14px; font-family: &quot;Helvetica Neue&quot;, Helvetica, Arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(51, 51, 51);">
+	<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">CSS minifier&nbsp;</span>- <a href="http://cssminifier.com/" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 255); text-decoration-line: none; cursor: pointer;">http://cssminifier.com/</a><br>
+	<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">JS minifier&nbsp;</span>- <a href="https://javascript-minifier.com/" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 255); text-decoration-line: none; cursor: pointer;">https://javascript-minifier.com/</a><br>
+	<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">Images&nbsp;</span><span style="font-weight: 700;">minifier</span>&nbsp;- <a href="https://tinypng.com/" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 255); text-decoration-line: none; cursor: pointer;">https://tinypng.com/</a><br>
+	<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">HTML&nbsp;</span><span style="font-weight: 700;">minifier</span>&nbsp;- <a href="http://www.willpeavy.com/minifier/" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 255); text-decoration-line: none; cursor: pointer;">http://www.willpeavy.com/minifier/</a></div>
+<h4 id="ure_ivanje_i_css_izmjena_boje">Izmjena boje</h4>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	Ukoliko želite da promijenite boju, potrebno je da pristupite fajlu za varijable (_variables.scss) i dodate svoje boje</p>
+<h5 style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 100; font-size: 16px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	Primjer:</h5>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	Izmjena <strong>primarne boje</strong> - Pronaći red sa nazivom<strong> $turquoise-blue: #06aaca;&nbsp;&nbsp;</strong>i dodati željenu boju, npr.&nbsp;<strong>$turquoise-blue: #000;</strong></p>
+<h4 id="ure_ivanje_i_css_izmjena_slika">Izmjena Slika</h4>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	Ukoliko želite da promijenite odredjenu sliku, možete pristupiti folder&quot;<strong>img</strong>&quot; i jednostvano dodati željenu sliku.</p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	<span style="font-size: 20px;">Izmjena fonta</span></p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	U ovoj aplikaciji su predefinisani sledeći fontovi:<br>
+	<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">&#39;&#39;Poppins&#39;, sans-serif&#39;</span>&nbsp;(Avaiable on Google Fonts)</p>
+<pre class="prettyprint lang-js linenums" style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+1. &quot;<strong>Muli</strong>&quot;, sans-serif; (dostupan na Google Fonts)
+2. &quot;<strong>Bebas Neue</strong>. cursive&quot;, (dostupan na Google Fonts)
+3. &quot;<strong>Playfair Display</strong>, serif&quot;, (dostupan na Google Fonts)</pre>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	Za izmjenu fonta posjetite web stranicu <a href="http://http//www.google.com/webfonts" style="font-family: inherit; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; vertical-align: baseline; color: rgb(0, 0, 255); text-decoration-line: none; cursor: pointer;">http://www.google.com/webfonts</a>&nbsp;i odaberite željeni font.</p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	Na kraju link morate dodati u&nbsp;<strong>HTML</strong>&nbsp;ili&nbsp;<strong>CSS</strong>&nbsp;fajl.</p>
+<h5 style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 100; font-size: 16px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; color: rgb(56, 56, 56);">
+	Primjer:</h5>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	Dodavanje fonta u <strong>css</strong> fajl:</p>
+<pre class="prettyprint lang-js linenums" style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+@import url(&#39;https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&#39;);</pre>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	Dodavanje vrijednosti na <strong>body</strong> element u css fajlu:</p>
+<pre class="prettyprint lang-js linenums" style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+body
+{
+        font-family: &#39;Poppins&#39;, sans-serif;
+}</pre>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	&nbsp;</p>
+</section>
+<section id="google_mape">
+	<div class="page-header"><h3>Google Mape</h3><hr class="notop"></div>
+<p>
+	<strong>Google</strong> ažuriranje 22.06.2019. Zahtijeva da se od sada koriste ključevi <strong>API</strong>-ja. Za vi&scaron;e informacija pročitajte ovaj post - https://googlegeodevelopers.blogspot.com.by/2016/06/building-for-scale-updates-to-google.html To je Google zahtev.</p>
+<p>
+	Jednostavno morate unijeti API ključ za svoj widget za <strong>Google</strong> <strong>Maps</strong> web mjesto i on će raditi 100% po želji. Da biste kreirali API ključ, idite na ovu stranicu -<strong> https://developers.google.com/maps/documentation/javascript/get-api-key</strong> i pritisnite plavo dugme &bdquo;Dobijanje ključa&ldquo; i slijedite upustva.</p>
+<h4 id="google_mape_dodavanje_novog_api_kljuae">Dodavanje novog API ključa</h4>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	Pronaći HTML fajl sa sledećom skriptom:</p>
+<pre class="prettyprint lang-js linenums" style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+&lt;script src=&quot;https://maps.googleapis.com/maps/api/js?key=AIzaSyAsXawwS7Pa4IuJtGnlP kfHzS2cMr4e5OI&amp;callback=initMap&quot;&gt;&lt;/script&gt;</pre>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; vertical-align: baseline;">Zatim zamijeniti sa va&scaron;im API ključem -&nbsp;</span><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">AIzaSyDzf6Ghbcv4c4HijOERAmC_j0g2c</span><span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; vertical-align: baseline;">&nbsp;(ovo je samo primjer API&nbsp;</span>ključa<span style="font-style: inherit; font-weight: inherit;">).</span></p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	<span style="font-size: 20px;">Izmjena lokacije</span></p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	Pronaći sledeću skriptu <strong>(google-map.js)</strong></p>
+<pre class="prettyprint lang-js linenums" style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+<span style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;">var mapOptions = { </span>
+
+<span style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;">zoom: 11, /* Ovaj parametar će zumirati mapu za datu vrijednost */ </span>
+
+<span style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;">center: new google.maps.LatLng(40.6700, -73.9400), /* Ovdje možete dodati va&scaron;u lokaciju  */</span>
+
+<span style="color: rgb(34, 34, 34); font-family: Arial, Verdana, sans-serif;">}</span></pre>
+<div>
+	<h4 id="google_mape_ureae">Uređivanje</h4>
+	<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+		<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline;">Također google karte omogućuju promjenu nekih stilova poput boja. Da biste promijenili, na primjer, boju puteva, jednostavno pronađite sledeće:&nbsp;</span><strong>(google-map.js)</strong></p>
+	<pre class="prettyprint lang-js linenums" style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+</pre>
+	<ol class="linenums" style="margin: 0px 0px 0px 33px; padding-right: 0px; padding-left: 0px; border: 0px; outline: 0px; font-family: monospace; vertical-align: baseline; line-height: 1.5em;">
+		<li class="L0" style="margin: 0px 0px 0px 36px; padding: 0px 0px 0px 12px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal; color: rgb(190, 190, 197); line-height: 18px; text-shadow: rgb(255, 255, 255) 0px 1px 0px;">
+			<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: Arial, Verdana, sans-serif; vertical-align: baseline; color: rgb(34, 34, 34);"><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);">styles</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">:</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> </span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">[{</span></span></li>
+		<li class="L1" style="margin: 0px 0px 0px 36px; padding: 0px 0px 0px 12px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal; color: rgb(190, 190, 197); line-height: 18px; text-shadow: rgb(255, 255, 255) 0px 1px 0px;">
+			<span class="str" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">&quot;featureType&quot;</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">:</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> </span><span class="str" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">&quot;water&quot;</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">,</span></li>
+		<li class="L2" style="margin: 0px 0px 0px 36px; padding: 0px 0px 0px 12px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal; color: rgb(190, 190, 197); line-height: 18px; text-shadow: rgb(255, 255, 255) 0px 1px 0px;">
+			<span class="str" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">&quot;elementType&quot;</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">:</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> </span><span class="str" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">&quot;geometry&quot;</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">,</span></li>
+		<li class="L3" style="margin: 0px 0px 0px 36px; padding: 0px 0px 0px 12px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal; color: rgb(190, 190, 197); line-height: 18px; text-shadow: rgb(255, 255, 255) 0px 1px 0px;">
+			<span class="str" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">&quot;stylers&quot;</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">:</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> </span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">[{</span></li>
+		<li class="L4" style="margin: 0px 0px 0px 36px; padding: 0px 0px 0px 12px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal; color: rgb(190, 190, 197); line-height: 18px; text-shadow: rgb(255, 255, 255) 0px 1px 0px;">
+			<span class="str" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">&quot;color&quot;</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">:</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> </span><span class="str" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">&quot;#e9e9e9&quot;</span></li>
+		<li class="L5" style="margin: 0px 0px 0px 36px; padding: 0px 0px 0px 12px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal; color: rgb(190, 190, 197); line-height: 18px; text-shadow: rgb(255, 255, 255) 0px 1px 0px;">
+			<span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">},</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> </span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">{</span></li>
+		<li class="L6" style="margin: 0px 0px 0px 36px; padding: 0px 0px 0px 12px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal; color: rgb(190, 190, 197); line-height: 18px; text-shadow: rgb(255, 255, 255) 0px 1px 0px;">
+			<span class="str" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">&quot;lightness&quot;</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">:</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> </span><span class="lit" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(25, 95, 145);">17</span></li>
+		<li class="L7" style="margin: 0px 0px 0px 36px; padding: 0px 0px 0px 12px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal; color: rgb(190, 190, 197); line-height: 18px; text-shadow: rgb(255, 255, 255) 0px 1px 0px;">
+			<span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">}]</span></li>
+	</ol>
+</div>
+<h4 id="google_mape_map_marker_ikonica_">Map Marker (ikonica)</h4>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	Za promjenu markera mape prvo morate promijeniti lat i long, staviti iste brojeve kao i za lokaciju, a zatim dodati ikonicu u folderu za slike (<strong>img</strong>).</p>
+<ol class="linenums" style="margin: 0px 0px 0px 33px; padding-right: 0px; padding-left: 0px; border: 0px; outline: 0px; font-family: monospace; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56); white-space: pre;">
+	<li class="L0" style="margin: 0px 0px 0px 36px; padding: 0px 0px 0px 12px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal; color: rgb(190, 190, 197); line-height: 18px; text-shadow: rgb(255, 255, 255) 0px 1px 0px;">
+		<span class="kwd" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(30, 52, 123);">var</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> marker </span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">=</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> </span><span class="kwd" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(30, 52, 123);">new</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> google</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">.</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);">maps</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">.</span><span class="typ" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: teal;">Marker</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">({</span></li>
+	<li class="L1" style="margin: 0px 0px 0px 36px; padding: 0px 0px 0px 12px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal; color: rgb(190, 190, 197); line-height: 18px; text-shadow: rgb(255, 255, 255) 0px 1px 0px;">
+		<span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);">position</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">:</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> </span><span class="kwd" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(30, 52, 123);">new</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> google</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">.</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);">maps</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">.</span><span class="typ" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: teal;">LatLng</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">(</span><span class="lit" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(25, 95, 145);">40.6700</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">,</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> </span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">-</span><span class="lit" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(25, 95, 145);">73.9400</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">),</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> </span><span class="com" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">/* HERE YOU CAN PUT LOCATION OF MAP MARKER */</span></li>
+	<li class="L2" style="margin: 0px 0px 0px 36px; padding: 0px 0px 0px 12px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal; color: rgb(190, 190, 197); line-height: 18px; text-shadow: rgb(255, 255, 255) 0px 1px 0px;">
+		<span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);">map</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">:</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> map</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">,</span></li>
+	<li class="L3" style="margin: 0px 0px 0px 36px; padding: 0px 0px 0px 12px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal; color: rgb(190, 190, 197); line-height: 18px; text-shadow: rgb(255, 255, 255) 0px 1px 0px;">
+		<span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);">icon</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">:</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> </span><span class="str" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">&#39;images/other/map-marker.png&#39;</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">,</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> </span><span class="com" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">/* AND HERE CHANGE THE PATH OF YOUR MAP MARKER ICON */</span></li>
+	<li class="L4" style="margin: 0px 0px 0px 36px; padding: 0px 0px 0px 12px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal; color: rgb(190, 190, 197); line-height: 18px; text-shadow: rgb(255, 255, 255) 0px 1px 0px;">
+		<span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);">title</span><span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">:</span><span class="pln" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(72, 72, 76);"> </span><span class="str" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(221, 17, 68);">&#39;Za Njihov Osmjeh!&#39;</span></li>
+	<li class="L5" style="margin: 0px 0px 0px 36px; padding: 0px 0px 0px 12px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; list-style: decimal; color: rgb(190, 190, 197); line-height: 18px; text-shadow: rgb(255, 255, 255) 0px 1px 0px;">
+		<span class="pun" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(147, 161, 161);">});</span></li>
+</ol>
+</section>
+<section id="internet_ivori_i_biblioteke">
+	<div class="page-header"><h3>Internet Ivori i Biblioteke</h3><hr class="notop"></div>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	<span style="font-family: inherit; font-style: inherit; font-weight: 700;">Fontovi:</span></p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	<a href="http://www.google.com/webfonts" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 255); text-decoration-line: none; cursor: pointer;">http://www.google.com/webfonts</a></p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	<span style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: 700; font-style: inherit; font-family: inherit; vertical-align: baseline;">JS Biblioteke:</span></p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	jquery.min.js (v3.5.0)&nbsp;<a href="https://github.com/jquery/jquery" style="font-family: inherit; margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; vertical-align: baseline; color: rgb(0, 0, 255); text-decoration-line: none; cursor: pointer;">https://github.com/jquery/jquery</a></p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	bootstrap.min.js (v4.3.1)&nbsp;<a href="https://getbootstrap.com/docs/4.0/getting-started/introduction/" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 255); text-decoration-line: none; cursor: pointer;">https://getbootstrap.com/docs/4.0/getting-started/introduction/</a></p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	owl.carousel.js&nbsp;<a href="https://github.com/OwlCarousel2/OwlCarousel2" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 255); text-decoration-line: none; cursor: pointer;">https://github.com/OwlCarousel2/OwlCarousel2</a></p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	jquery-nice-select (v1.1.0)&nbsp;<a href="https://github.com/hernansartorio/jquery-nice-select" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 255); text-decoration-line: none; cursor: pointer;">https://github.com/hernansartorio/jquery-nice-select</a></p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	jquery-ui.js&nbsp;<a href="https://jqueryui.com/" style="margin: 0px; padding: 0px; border: 0px; outline: 0px; font-weight: inherit; font-style: inherit; font-family: inherit; vertical-align: baseline; color: rgb(0, 0, 255); text-decoration-line: none; cursor: pointer;">https://jqueryui.com/</a></p>
+<p style="margin: 18px 0px; padding: 0px; border: 0px; outline: 0px; font-family: Arial, verdana, arial, sans-serif; vertical-align: baseline; line-height: 1.5em; color: rgb(56, 56, 56);">
+	sweetalert.min.js&nbsp;<a href="https://lipis.github.io/bootstrap-sweetalert/" style="font-family: Arial, Verdana, sans-serif;">https://lipis.github.io/bootstrap-sweetalert/</a></p>
+</section>
+
+	</div>
+</body>
+</html>
