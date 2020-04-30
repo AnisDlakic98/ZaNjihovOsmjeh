@@ -21,6 +21,7 @@
         }
         .counter {
             .percentage {
+                top: 45%;
                 font-size: 150px;
                 width: 250px;
             }
@@ -118,9 +119,67 @@
             }
         }
     }
+    .poput_tab_title {
+        h1 {
+            font-size: 40px !important;
+        }
+    }
 }
 
 @media (max-width: 991px) {
+    .prompt {
+        h1 {
+            width: 100%;
+            font-size: 50px;
+        }
+    }
+    .poput_tab_title {
+        margin-top: 40px;
+    }
+    .popup_tab .popup_header {
+        .btn_transparent {
+            top: 20px;
+            left: 20px;
+        }
+        .close {
+            top: 20px;
+            right: 20px;
+        }
+    }
+    #donate {
+        .section_title {
+            h1 {
+                font-size: 50px;
+            }
+            p {
+                width: 90%;
+            }
+        }
+        .col-lg-3 {
+            height: auto !important;
+        }
+        .nav.nav-pills.flex-column {
+            margin-bottom: 30px;
+            flex-direction: row !important;
+            .nav-item {
+                width: 33.33333%;
+                .nav-link {
+                    margin-left: 10px;
+                }
+                &:first-child .nav-link {
+                    margin-left: 0;
+                }
+            }
+            .nav-link.active::after,
+            .show>.nav-link::after {
+                position: absolute;
+                top: 150px;
+                left: 50%;
+                z-index: -1;
+                transform: translateX(-50%) rotate(45deg);
+            }
+        }
+    }
     .navbar {
         background: $white;
         .navbar-brand img {
@@ -154,6 +213,9 @@
             height: 250px !important;
             left: 55px;
             margin-bottom: 20px;
+            .percentage {
+                top: 55%;
+            }
         }
         .col-lg-6.d-flex:last-child {
             padding-left: 0;
@@ -218,6 +280,37 @@
 }
 
 @media (max-width: 767px) {
+    .prompt {
+        h1 {
+            width: 100%;
+            font-size: 40px;
+        }
+    }
+    #donate {
+        .row.mt-6.mx-auto {
+            text-align: center !important;
+        }
+        .nav.nav-pills.flex-column {
+            flex-direction: column !important;
+            .nav-item {
+                width: 100%;
+                .nav-link {
+                    margin-left: 10px;
+                }
+                &:first-child .nav-link {
+                    margin-left: 0;
+                }
+            }
+            .nav-link.active::after,
+            .show>.nav-link::after {
+                position: absolute;
+                top: 150px;
+                left: 50%;
+                z-index: -1;
+                transform: translateX(-50%) rotate(45deg);
+            }
+        }
+    }
     .banner.blog-single {
         height: 60vh;
     }
@@ -302,6 +395,13 @@
 }
 
 @media (max-width: 590px) {
+    .news_single_txt .txt_content {
+        height: auto !important;
+        top: 0 !important;
+        h1 {
+            font-size: 25px !important;
+        }
+    }
     #success_campagnes {
         .counter-left {
             font-size: 100px;
@@ -317,7 +417,7 @@
             .percentage {
                 font-size: 100px;
                 width: 200px !important;
-                top: 40%;
+                top: 45%;
             }
             .circleProgressCanvas {
                 width: 200px !important;

@@ -52,7 +52,7 @@ $(function() {
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4 m-auto text-center" id="${shortName}_select_area">
+                        <div class="col-lg-4 col-md-12 m-auto text-center" id="${shortName}_select_area">
                             <p>Odaberi pol:</p>
                             <div class="gender_area">
                             

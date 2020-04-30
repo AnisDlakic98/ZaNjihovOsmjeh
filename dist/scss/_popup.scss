@@ -170,10 +170,10 @@
         display: block;
         pointer-events: visible;
     }
-    .col-lg-7 {
+    .col-lg-12 {
         display: flex;
-        margin: auto;
         height: 100vh;
+        margin: auto;
         h1 {
             margin-bottom: 30px;
         }
@@ -185,6 +185,8 @@
         font-family: $font_stack_3;
         font-size: 72px;
         font-weight: map-get($font-weights, bold);
+        width: 800px;
+        margin: auto;
     }
 }
 
